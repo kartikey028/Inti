@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Question for Pragya</title>
+    <!-- 1. Tailwind CSS for elegant styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2. Google Font for a romantic feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* 3. Custom styles */
+        body {
+            /* Using Quicksand for body text */
+            font-family: 'Quicksand', sans-serif;
+            /* Soft, romantic background */
+            background-color: #FFFBF7; 
+        }
+        
+        /* Using Playfair Display for headings */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* 4. A pulsing heart animation for the final screen */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.15);
+            }
+        }
+        .pulse {
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        /* 5. A fade-in animation for each screen */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* 6. Custom button color */
+        .btn-primary {
+            background-color: #C1392B; /* A deep, romantic red */
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #A93125;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen text-gray-800">
+
+    <div class="max-w-xl w-full mx-auto p-6 md:p-10 text-center overflow-hidden">
+
+        <!-- ===== SCREEN 1: The Start ===== -->
+        <div id="screen1" class="fade-in space-y-6">
+            <h1 class="text-4xl md:text-5xl font-medium text-rose-900">Hi, Pragya</h1>
+            <p class="text-lg text-gray-600">
+                You keep saying, “chinni mang raha hai kya?” every time I say marry me.
+            </p>
+            <p class="text-lg text-gray-600">
+               So fine — yes, I’m asking for chinni... but only if it comes with you for life. 😉💞
+            </p>
+            <p class="text-lg text-gray-600 italic">
+                (No chinni this time… just a promise that’ll never fade.)
+            </p>
+            <button id="next1" class="btn-primary font-medium py-3 px-8 rounded-full shadow-lg mt-4 text-lg">
+                Start our story
+            </button>
+        </div>
+
+        <!-- ===== SCREEN 2: The Feeling ===== -->
+        <div id="screen2" class="fade-in space-y-6 hidden">
+            <h2 class="text-3xl md:text-4xl font-medium text-rose-900">From the moment we met...</h2>
+            <p class="text-xl text-gray-700">
+                My life changed.
+            </p>
+            <p class="text-xl text-gray-700">
+                You have this incredible way of making me feel...
+            </p>
+            <h3 class="text-4xl md:text-5xl font-medium text-rose-700">Special.</h3>
+            <p class="text-xl text-gray-700">
+                Truly, deeply special.
+            </p>
+            <button id="next2" class="btn-primary font-medium py-3 px-8 rounded-full shadow-lg mt-4 text-lg">
+                And it's not just that...
+            </button>
+        </div>
+
+        <!-- ===== SCREEN 3: The Core Message ===== -->
+        <div id="screen3" class="fade-in space-y-6 hidden">
+            <h2 class="text-3xl md:text-4xl font-medium text-rose-900">When I'm with you...</h2>
+            <p class="text-2xl md:text-3xl text-gray-800 italic leading-relaxed">
+                "I feel like the happiest person in the world."
+            </p>
+            <p class="text-xl text-gray-700">
+                All the noise fades away. It's just... us.
+            </p>
+            <p class="text-xl text-gray-700">
+                And that's my favorite place to be.
+            </p>
+            <button id="next3" class="btn-primary font-medium py-3 px-8 rounded-full shadow-lg mt-4 text-lg">
+                So...
+            </button>
+        </div>
+
+        <!-- ===== SCREEN 4: The Proposal ===== -->
+        <div id="screen4" class="fade-in space-y-8 hidden">
+            <h2 class="text-3xl md:text-4xl font-medium text-rose-900">You're my best friend, my rock, and my whole heart.</h2>
+            <p class="text-xl text-gray-700">
+                I don't want to spend another day without you as my partner in everything.
+            </p>
+            <h1 class="text-4xl md:text-6xl font-bold text-red-700">
+                Pragya, will you marry me?
+            </h1>
+            
+            <!-- The Yes/No Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
+                <!-- YES Button -->
+                <button id="yesButton" class="btn-primary font-bold py-4 px-12 rounded-full shadow-xl text-2xl transform hover:scale-105">
+                    YES!
+                </button>
+                
+                <!-- The tricky NO button -->
+                <button id="noButton" class="bg-gray-300 text-gray-700 py-2 px-6 rounded-full shadow transition-all duration-300 relative">
+                    No
+                </button>
+            </div>
+        </div>
+
+        <!-- ===== SCREEN 5: The "YES" Celebration ===== -->
+        <div id="screen5" class="fade-in space-y-6 hidden">
+            <!-- Pulsing Heart SVG -->
+            <svg class="pulse w-24 h-24 text-red-600 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+
+            <h1 class="text-4xl md:text-5xl font-medium text-rose-900">You've made me the happiest man alive!</h1>
+            <p class="text-2xl text-gray-700">
+                I love you more than words can say.
+            </p>
+            <p class="text-lg text-gray-600">
+                (I guess this means I’m getting that tattoo of your name now... 😉)
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Simple JavaScript to handle the flow
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all screens
+            const screen1 = document.getElementById('screen1');
+            const screen2 = document.getElementById('screen2');
+            const screen3 = document.getElementById('screen3');
+            const screen4 = document.getElementById('screen4');
+            const screen5 = document.getElementById('screen5');
+
+            // Get all buttons
+            const next1 = document.getElementById('next1');
+            const next2 = document.getElementById('next2');
+            const next3 = document.getElementById('next3');
+            const yesButton = document.getElementById('yesButton');
+            const noButton = document.getElementById('noButton');
+            
+            // Function to show a screen
+            function showScreen(screen) {
+                // Hide all screens first
+                [screen1, screen2, screen3, screen4, screen5].forEach(s => s.classList.add('hidden'));
+                // Show the target screen
+                screen.classList.remove('hidden');
+            }
+
+            // --- Screen Transitions ---
+            next1.addEventListener('click', () => showScreen(screen2));
+            next2.addEventListener('click', () => showScreen(screen3));
+            next3.addEventListener('click', () => showScreen(screen4));
+            yesButton.addEventListener('click', () => showScreen(screen5));
+
+            // --- The "No" Button Logic ---
+            // It will run away when she tries to move the mouse over it!
+            noButton.addEventListener('mouseover', () => {
+                const buttonWidth = noButton.offsetWidth;
+                const buttonHeight = noButton.offsetHeight;
+                
+                // Get viewport dimensions
+                const screenWidth = window.innerWidth;
+                const screenHeight = window.innerHeight;
+
+                // Calculate random new position
+                // We subtract the button width/height to ensure it doesn't go off-screen
+                const newX = Math.random() * (screenWidth - buttonWidth);
+                const newY = Math.random() * (screenHeight - buttonHeight);
+
+                // Apply new position
+                // We use 'fixed' positioning to allow it to move anywhere on screen
+                noButton.style.position = 'fixed';
+                noButton.style.left = `${newX}px`;
+                noButton.style.top = `${newY}px`;
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
